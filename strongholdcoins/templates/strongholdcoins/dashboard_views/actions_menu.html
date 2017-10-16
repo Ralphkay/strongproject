@@ -1,0 +1,40 @@
+{% load staticfiles %}{% load account_tags %}{% load account_tags %}
+<div class="sidebar ">
+    <nav class="sidebar-nav ">
+        <ul class="nav ">
+
+            <div id="profile-pic">
+
+                {% if request.user.profile.profile_picture == '' %}
+                  <div class="pp" style="max-height:200px; overflow:hidden;">
+                <img src="{% static 'strongholdcoins/img/placeholder.png' %}" style="object-fit: cover;height: 200px;
+                width: 200px
+                !important; overflow: hidden;padding:20px" alt="">
+                  </div>
+                {% else %}
+                <div class="pp" style="max-height:200px; overflow:hidden;">
+                    <img src="{{request.user.profile.profile_picture.url}}" style="object-fit: cover;height: 200px;
+                    width: 200px
+                !important; overflow: hidden;padding:20px" alt="">
+                </div>
+                {% endif  %}
+
+            </div>
+
+
+            <li class="nav-item"><a href="" class="nav-link">
+                {% if request.user.profile.first_name == "" %}
+                <h5 class="lead">{{ request.user.email }} </h5>
+                {%else %}
+                <h5 class="lead">{{ request.user.profile.full_name }} </h5>
+                {% endif %}
+            </a></li>
+            <li class="nav-item"><a href="{% url 'dashboard' %}" class="nav-link"><i class="fa fa-dashboard fa-4x" aria-hidden="true"></i>Dashboard</a></li>
+            <li class="nav-item"><a href="{% url 'account_settings' %}" class="nav-link"><i class="fa fa-cog"></i> Account</a></li>
+        
+            <li class="nav-item"><a href="{% url 'userprofile' %}" class="nav-link"><i class="fa fa-vcard fa-4x" aria-hidden="true"></i>Profile</a></li>
+
+            <li class="nav-item"><a href="" class="nav-link"></a></li>
+        </ul>
+    </nav>
+</div>

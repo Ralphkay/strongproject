@@ -1,0 +1,61 @@
+{% load humanize %}
+<div class="" id="newsheadline">
+
+    <h6>Select your cryptocoin</h6>
+    <hr>
+ <div class="form-row">
+        <div class="form-group col-md-4">
+        <h6>Bitcoin
+        <input type="radio" name="coin" value="Bitcoin">
+      </h6>
+    </div>
+        <div class="form-group col-md-4">
+        <h6>Ethireum
+        <input type="radio" name="coin" value="Ethereum">
+      </h6>
+    </div>
+
+        <div class="form-group col-md-4">
+        <h6>Litecoin
+        <input type="radio" name="coin" value="Litecoin">
+      </h6>
+    </div>
+
+ </div>
+    <hr>
+    <form id="buyingform">
+    <!--<h6>Buying</h6>-->
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputEmail4" class="col-form-label">Amount (USD)</label>
+                <input type="number" class="form-control bg-dark border-pher text-white" min="10" name="amount1" id="amount1">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputPassword4" class="col-form-label">Coins</label>
+                <input type="number" class="form-control bg-dark border-pher text-white" hidden="True" id="h_totsfee"
+                       readonly="true" value="{{total_fee}}">
+                <input type="number" class="form-control bg-dark border-pher text-white" id="amount_of_bitcoins1"
+                       readonly="true">
+            </div>
+             <div class="form-group col-md-4">
+                <label for="inputPassword4" class="col-form-label">Fee(USD)</label>
+                <input type="number" class="form-control bg-dark border-pher text-white" id="key_fee"
+                       value="{{transaction_fee}}"
+                       hidden=""True
+                       readonly="true">
+                <input type="number" class="form-control bg-dark border-pher text-white" id="transaction_fee1"
+                       readonly="true">
+            </div>
+<div class="form-row col-md-12">
+                <label class="col-form-label">Amount to be Paid (GHC)</label>
+                <input type="number" class="form-control bg-dark border-pher text-white" id="amountTotal"
+                       readonly="true">
+            </div>
+        </div>
+
+    </form>
+
+
+    
+    
+</div>
