@@ -236,9 +236,9 @@ EMAIL_SUBJECT_PREFIX = ['STRONGHOLDCOINS']
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'raphaelkofiamponsah@gmail.com'
-EMAIL_HOST_PASSWORD = 'mylove99'
-DEFAULT_FROM_EMAIL = 'raphaelkofiamponsah@gmail.com'
-DEFAULT_TO_EMAIL = 'ralphmaximillian@gmail.com'
+EMAIL_HOST_USER = '@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = '@gmail.com'
+DEFAULT_TO_EMAIL = '@gmail.com'
 
 ADMINS = [('Ralph', EMAIL_HOST_USER)]
