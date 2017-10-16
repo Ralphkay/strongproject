@@ -5,16 +5,17 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = PACKAGE_ROOT
 
-DEBUG = True
+DJANGO_MODE = os.getenv('DJANGO_MODE','Production').lower()
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "dev.db",
+if DJANGO_MODE=='local':
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": "dev.db",
+        }
     }
-}
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'].split(',')
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -77,6 +78,13 @@ STATICFILES_FINDERS = [
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "&1d*yflhe4z4cmg1=7en32s_kh6too7&^sta793523am__rmqw"
 
+
+if DJANGO_MODE=='local':
+    DEBUG = True
+else:
+    DEBUG = False
+
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -103,6 +111,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 MIDDLEWARE_CLASSES = [
     "django.contrib.sessions.middleware.SessionMiddleware",
